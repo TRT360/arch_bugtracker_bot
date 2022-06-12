@@ -1,3 +1,12 @@
+config-local.yml
+config-local.yaml
+
+tmp.*
+*.tmp
+
+
+/.vscode
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
