@@ -12,7 +12,7 @@ class Configs(BaseSettings):
     system_config: SystemConfig
     parser_config: ParserConfig
     logging_configs: list[LoggingConfig]
-        
+
     class Config:
         @classmethod
         def customise_sources(
