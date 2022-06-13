@@ -1,0 +1,9 @@
+[flake8]
+max-line-length=127
+show-source=True
+statistics=True
+max-complexity=10
+count=True
+exclude = 
+    .venv,
+    .mypy_cache
