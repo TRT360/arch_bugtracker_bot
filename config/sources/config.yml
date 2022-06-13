@@ -1,0 +1,34 @@
+system_config:
+  env: DEBUG
+
+telegram_config:
+  example: true
+
+parser_config:
+  example: true
+
+logging_configs:
+    - 
+        sink: stdout
+        format: "<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
+        level: TRACE
+
+    - 
+        sink: "./logs/default.log"
+        format: "<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
+        level: WARNING
+        rotation: "1 week"
+
+    - 
+        sink: "./logs/critical.log"
+        format: "<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
+        level: CRITICAL
+        rotation: "1 week"
+
+# TRACE   	 5  	logger.trace()
+# DEBUG      10 	logger.debug()
+# INFO       20 	logger.info()
+# SUCCESS    25 	logger.success()
+# WARNING    30 	logger.warning()
+# ERROR      40 	logger.error()
+# CRITICAL   50 	logger.critical()
