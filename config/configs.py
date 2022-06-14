@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Any, Callable
 
 import yaml
@@ -28,6 +29,9 @@ def yaml_settings_source(config: BaseSettings) -> dict[str, Any]:
     config_source_data: dict[str, Any] = {}
     try:
         for source in (DEFAULT_CONFIG_FILE, CONFIG_FILE):
+            if not (source := Path(source)).resolve().exists():
+                continue
+
             with open(source, 'r') as file:
                 if config_source_data := yaml.safe_load(file):
                     config_source_data['logging_configs']
